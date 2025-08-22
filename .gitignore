@@ -3,6 +3,23 @@ target/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+# IntelliJ
+.idea/
+*.iml
+
+# Maven/Gradle
+target/
+.gradle/
+build/
+
+# Node/Angular
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+
+# OS
+.DS_Store
+Thumbs.db
 
 ### STS ###
 .apt_generated
