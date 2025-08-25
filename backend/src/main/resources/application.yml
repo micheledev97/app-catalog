@@ -1,0 +1,40 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://postgres:5432/catalogo}
+    username: ${DB_USER:catalogo}
+    password: ${DB_PASSWORD:catalogo}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+  cache:
+    type: redis
+  data:
+    redis:
+      host: ${REDIS_HOST:redis}
+      port: ${REDIS_PORT:6379}
+
+server:
+  port: 8080
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:change-me-super-secret-key-change-me-change-me}
+    expiration-ms: 86400000
+  cache:
+    ttl-seconds: 120
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    prometheus:
+      enabled: true
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html

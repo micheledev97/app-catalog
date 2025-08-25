@@ -1,12 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.example</groupId>
 	<artifactId>catalogo-app</artifactId>
 	<version>0.0.1</version>
 	<name>catalogo-app</name>
+
 	<properties>
 		<java.version>17</java.version>
 		<spring.boot.version>3.3.2</spring.boot.version>
@@ -109,22 +109,36 @@
 	</dependencies>
 
 	<build>
+		<!-- nome fisso del jar in target/ -->
+		<finalName>catalogo-app</finalName>
+
 		<plugins>
+			<!-- IMPORTANTE: versione esplicita + goal repackage -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${spring.boot.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 				<configuration>
 					<image>
 						<name>catalogo-backend:latest</name>
 					</image>
 				</configuration>
 			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
+
 				</configuration>
 			</plugin>
 		</plugins>

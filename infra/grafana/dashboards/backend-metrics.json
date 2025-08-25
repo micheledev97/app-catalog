@@ -1,0 +1,41 @@
+{
+  "annotations": { "list": [] },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "iteration": 1,
+  "links": [],
+  "panels": [
+    {
+      "type": "timeseries",
+      "title": "HTTP Requests per second",
+      "targets": [
+        { "expr": "rate(http_server_requests_seconds_count[1m])", "legendFormat": "{{method}} {{uri}} {{status}}" }
+      ],
+      "gridPos": { "h": 8, "w": 24, "x": 0, "y": 0 }
+    },
+    {
+      "type": "timeseries",
+      "title": "JVM Memory Used",
+      "targets": [ { "expr": "jvm_memory_used_bytes{area=\"heap\"}" } ],
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 8 }
+    },
+    {
+      "type": "timeseries",
+      "title": "JVM GC Pauses",
+      "targets": [ { "expr": "rate(jvm_gc_pause_seconds_count[5m])" } ],
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 8 }
+    }
+  ],
+  "refresh": "10s",
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": ["spring", "actuator"],
+  "templating": { "list": [] },
+  "time": { "from": "now-6h", "to": "now" },
+  "timezone": "",
+  "title": "Backend Metrics (Spring Boot)",
+  "version": 1,
+  "weekStart": ""
+}

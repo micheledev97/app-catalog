@@ -1,4 +1,3 @@
 package com.catalogo.backend.dto;
 
-public class AuthResponse {
-}
+public record AuthResponse(String token, String role, String username) { }

@@ -1,0 +1,71 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: catalogo
+      POSTGRES_USER: catalogo
+      POSTGRES_PASSWORD: catalogo
+    ports: [ "5432:5432" ]
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U catalogo"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    ports: [ "6379:6379" ]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build: ./backend
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/catalogo
+      DB_USER: catalogo
+      DB_PASSWORD: catalogo
+      REDIS_HOST: redis
+      JWT_SECRET: "8f1c3b8c2c6a4c79a3d5f6e7b9c0d1e2f3a4b5c6d7e8f9012233445566778899"
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+    ports: [ "8080:8080" ]
+
+  frontend:
+    build: ./frontend
+    depends_on:
+      - backend
+    ports: [ "80:80" ]
+
+  prometheus:
+    image: prom/prometheus:v2.55.0
+    volumes:
+      - ./infra/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    ports: [ "9090:9090" ]
+    depends_on:
+      - backend
+
+  grafana:
+    image: grafana/grafana:10.4.3
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - grafana:/var/lib/grafana
+      - ./infra/grafana/provisioning/datasources.yml:/etc/grafana/provisioning/datasources/datasources.yml:ro
+      - ./infra/grafana/provisioning/dashboards.yml:/etc/grafana/provisioning/dashboards/dashboards.yml:ro
+      - ./infra/grafana/dashboards:/var/lib/grafana/dashboards:ro
+    ports: [ "3000:3000" ]
+    depends_on:
+      - prometheus
+
+volumes:
+  pgdata:
+  grafana:

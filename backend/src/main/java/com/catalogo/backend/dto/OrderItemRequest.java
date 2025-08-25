@@ -1,4 +1,5 @@
 package com.catalogo.backend.dto;
 
-public class OrderItemRequest {
-}
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+public record OrderItemRequest(@NotNull Long productId, @Min(1) int quantity) { }
