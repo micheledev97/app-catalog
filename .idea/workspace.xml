@@ -4,50 +4,51 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e5d5adc-4d0a-4b6d-b89e-22c71f2d83a6" name="Changes" comment="init commit: clean repo">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/config/PasswordConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/controller/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/dto/OrderRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/dto/UserSummary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/enviroments/environment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="6e5d5adc-4d0a-4b6d-b89e-22c71f2d83a6" name="Changes" comment="feat(backend):&#10;add CartItem &#10;TODO: implementing cartItem FrontEnd">
+      <change afterPath="$PROJECT_DIR$/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/dto/CartItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/service/CartService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/nginx.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/admin/admin-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/admin/admin.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/admin/product-crud/product-crud.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/admin/product-crud/product-crud.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/cart/cart.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/cart/cart.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/catalog/catalog.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/catalog/catalog.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/checkout/checkout.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/checkout/checkout.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/login/login.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/login/login.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/product-detail/product-detail.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/product-detail/product-detail.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/guards/admin.guard.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/guards/auth.guard.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/interceptors/auth.interceptor.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/services/auth.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/services/cart.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/services/order.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/services/product.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/enviroments/environment.prod.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/polyfills.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/controller/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/dto/AuthResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/dto/AuthResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/dto/OrderItemRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/dto/OrderItemRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/dto/OrderResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/dto/OrderResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/dto/ProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/dto/ProductDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/dto/ProductFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/dto/ProductFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/dto/RegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/dto/RegisterRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/repository/OrderItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/repository/OrderItemRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/repository/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/repository/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/security/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/security/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/security/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/security/JwtUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/catalogo/backend/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.app.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/grafana/dashboards/backend-metrics.json" beforeDir="false" afterPath="$PROJECT_DIR$/infra/grafana/dashboards/backend-metrics.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/grafana/provisioning/ dashboards.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/grafana/provisioning/ dashboards.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/grafana/provisioning/datasources.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/grafana/provisioning/datasources.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/prometheus/prometheus.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/prometheus/prometheus.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pipeline.sh" beforeDir="false" afterPath="$PROJECT_DIR$/pipeline.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +186,7 @@
       <option name="presentableId" value="Default" />
       <updated>1755847999684</updated>
       <workItem from="1755848000168" duration="13356000" />
-      <workItem from="1756115180954" duration="2259000" />
+      <workItem from="1756115180954" duration="17055000" />
     </task>
     <task id="LOCAL-00001" summary="init commit: create project structure BE, initialize FE">
       <created>1755850235272</created>
@@ -208,7 +209,21 @@
       <option name="project" value="LOCAL" />
       <updated>1755851093065</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat(backend):&#10;&#10;Configurato progetto Spring Boot 3 (Java 17) con dipendenze: Web, Security, JPA, Validation, Cache, Redis, Actuator, OpenAPI.&#10;&#10;Creato modello dati: User, Product, Order, OrderItem con repository JPA.&#10;&#10;Implementata autenticazione JWT con ruoli USER e ADMIN.&#10;&#10;Endpoint /auth/register e /auth/login&#10;&#10;JwtUtil, JwtAuthenticationFilter e configurazione Security&#10;&#10;Seeder automatico per utente admin predefinito&#10;&#10;CRUD prodotti (protetto da ruolo ADMIN), catalogo pubblico con paginazione e filtri.&#10;&#10;Creazione ordini con OrderService e gestione OrderItem.&#10;&#10;Configurato caching Redis su lista e dettaglio prodotti.&#10;&#10;Aggiunto Actuator con endpoint Prometheus per osservabilità.&#10;&#10;Integrato Swagger/OpenAPI UI per documentazione API.&#10;&#10;Dockerfile backend + configurazione docker-compose.yml con Postgres e Redis.">
+      <created>1756117753493</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1756117753494</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat(backend):&#10;add LoginRequest">
+      <created>1756117815628</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1756117815628</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,7 +246,10 @@
     </ignored-roots>
     <MESSAGE value="init commit: create project structure BE, initialize FE" />
     <MESSAGE value="init commit: clean repo" />
-    <option name="LAST_COMMIT_MESSAGE" value="init commit: clean repo" />
+    <MESSAGE value="feat(backend):&#10;&#10;Configurato progetto Spring Boot 3 (Java 17) con dipendenze: Web, Security, JPA, Validation, Cache, Redis, Actuator, OpenAPI.&#10;&#10;Creato modello dati: User, Product, Order, OrderItem con repository JPA.&#10;&#10;Implementata autenticazione JWT con ruoli USER e ADMIN.&#10;&#10;Endpoint /auth/register e /auth/login&#10;&#10;JwtUtil, JwtAuthenticationFilter e configurazione Security&#10;&#10;Seeder automatico per utente admin predefinito&#10;&#10;CRUD prodotti (protetto da ruolo ADMIN), catalogo pubblico con paginazione e filtri.&#10;&#10;Creazione ordini con OrderService e gestione OrderItem.&#10;&#10;Configurato caching Redis su lista e dettaglio prodotti.&#10;&#10;Aggiunto Actuator con endpoint Prometheus per osservabilità.&#10;&#10;Integrato Swagger/OpenAPI UI per documentazione API.&#10;&#10;Dockerfile backend + configurazione docker-compose.yml con Postgres e Redis." />
+    <MESSAGE value="feat(backend):&#10;add LoginRequest" />
+    <MESSAGE value="feat(backend):&#10;add CartItem &#10;TODO: implementing cartItem FrontEnd" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(backend):&#10;add CartItem &#10;TODO: implementing cartItem FrontEnd" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

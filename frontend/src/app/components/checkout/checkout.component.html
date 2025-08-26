@@ -1,0 +1,10 @@
+<div class="card">
+  <h3>Pagamento</h3>
+  <div style="display:grid;gap:8px;max-width:360px;">
+    <input placeholder="Numero carta fittizio" [(ngModel)]="cardNumber">
+    <input placeholder="Nome intestatario" [(ngModel)]="name">
+    <input placeholder="CVV" [(ngModel)]="cvv">
+    <button (click)="submit()" [disabled]="cart.items.length===0">Paga & Ordina</button>
+  </div>
+  <p *ngIf="msg" [style.color]="ok ? '#15803d':'#b91c1c'">{{msg}}</p>
+</div>

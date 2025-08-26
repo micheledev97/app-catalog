@@ -1,0 +1,25 @@
+<h2>Gestione Prodotti</h2>
+<div class="card" style="display:grid;gap:8px;max-width:520px;">
+  <input placeholder="Nome" [(ngModel)]="form.value.name" (ngModelChange)="form.patchValue({name:$event})">
+  <input placeholder="Categoria" [(ngModel)]="form.value.category" (ngModelChange)="form.patchValue({category:$event})">
+  <input placeholder="Prezzo" type="number" [(ngModel)]="form.value.price"
+         (ngModelChange)="form.patchValue({price:$event})">
+  <textarea placeholder="Descrizione" [(ngModel)]="form.value.description"
+            (ngModelChange)="form.patchValue({description:$event})"></textarea>
+  <div style="display:flex;gap:8px;">
+    <button (click)="save()">Salva</button>
+    <button (click)="reset()">Reset</button>
+  </div>
+</div>
+
+<h3 style="margin-top:16px;">Elenco</h3>
+<div class="grid">
+  <div class="card" *ngFor="let p of products">
+    <b>{{p.name}}</b> ({{p.category}}) — € {{p.price | number:'1.2-2'}}
+    <p>{{p.description}}</p>
+    <div style="display:flex;gap:8px;">
+      <button (click)="edit(p)">Modifica</button>
+      <button (click)="remove(p.id)">Elimina</button>
+    </div>
+  </div>
+</div>

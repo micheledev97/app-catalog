@@ -1,0 +1,10 @@
+<div class="card" *ngIf="product">
+  <h2>{{product.name}}</h2>
+  <div><i>{{product.category}}</i></div>
+  <p>{{product.description}}</p>
+  <h3>€ {{product.price | number:'1.2-2'}}</h3>
+  <div style="display:flex;gap:8px;align-items:center;">
+    <input type="number" [(ngModel)]="qty" min="1" style="width:80px;">
+    <button (click)="cart.add(product!, qty)">Aggiungi al carrello</button>
+  </div>
+</div>

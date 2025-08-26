@@ -42,7 +42,8 @@ services:
     build: ./frontend
     depends_on:
       - backend
-    ports: [ "80:80" ]
+    ports:
+      - "4200:80"
 
   prometheus:
     image: prom/prometheus:v2.55.0

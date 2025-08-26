@@ -1,0 +1,11 @@
+<div class="card" *ngIf="cart.items.length === 0">Il carrello è vuoto.</div>
+<div class="card" *ngFor="let i of cart.items">
+  <b>{{i.product.name}}</b> · € {{i.product.price | number:'1.2-2'}} × {{i.quantity}}
+  <div style="margin-top:8px;">
+    <button (click)="cart.remove(i.product.id)">Rimuovi</button>
+  </div>
+</div>
+<div class="card" *ngIf="cart.items.length">
+  <h3>Totale: € {{cart.total() | number:'1.2-2'}}</h3>
+  <button (click)="goCheckout()">Procedi all'ordine</button>
+</div>

@@ -22,20 +22,22 @@ public class ProductController {
 
     @GetMapping
     public Page<ProductDTO> list(
-            @RequestParam(defaultValue="0") int page,
-            @RequestParam(defaultValue="12") int size,
-            @RequestParam(required=false) String sort,
-            @RequestParam(required=false) String name,
-            @RequestParam(required=false) String category,
-            @RequestParam(required=false) BigDecimal minPrice,
-            @RequestParam(required=false) BigDecimal maxPrice
+            @RequestParam(name = "page", defaultValue = "0") int page,
+            @RequestParam(name = "size", defaultValue = "12") int size,
+            @RequestParam(name = "name", required = false) String name,
+            @RequestParam(name = "category", required = false) String category,
+            @RequestParam(name = "minPrice", required = false) BigDecimal minPrice,
+            @RequestParam(name = "maxPrice", required = false) BigDecimal maxPrice,
+            @RequestParam(name = "sort", required = false) String sort
     ){
         ProductFilter f = new ProductFilter(name, category, minPrice, maxPrice);
         return svc.list(page, size, sort, f);
     }
 
     @GetMapping("/{id}")
-    public ProductDTO get(@PathVariable Long id){ return svc.get(id); }
+    public ProductDTO get(@PathVariable("id") Long id) {
+        return svc.get(id);
+    }
 
     @PostMapping
     @PreAuthorize("hasRole('ADMIN')")
@@ -45,13 +47,13 @@ public class ProductController {
 
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<ProductDTO> update(@PathVariable Long id, @Valid @RequestBody ProductDTO dto){
+    public ResponseEntity<ProductDTO> update(@PathVariable("id") Long id, @Valid @RequestBody ProductDTO dto){
         return ResponseEntity.ok(svc.update(id, dto));
     }
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<Void> delete(@PathVariable Long id){
+    public ResponseEntity<Void> delete(@PathVariable("id") Long id){
         svc.delete(id);
         return ResponseEntity.noContent().build();
     }

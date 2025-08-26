@@ -1,1 +1,15 @@
-<h1>prova</h1>
+<header>
+  <div class="container" style="display:flex;align-items:center;gap:16px;">
+    <h2 style="margin:0;">Catalogo App</h2>
+    <nav style="margin-left:auto;display:flex;gap:12px;align-items:center;">
+      <a routerLink="/">Catalogo</a>
+      <a routerLink="/cart">Carrello ({{ cart.count() }})</a>
+      <a routerLink="/admin" *ngIf="auth.hasRole('ADMIN')">Admin</a>
+      <span *ngIf="!auth.isAuthenticated()"><a routerLink="/login">Login</a></span>
+      <span *ngIf="auth.isAuthenticated()">Ciao, {{auth.username()}} · <a href="#" (click)="logout()">Logout</a></span>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

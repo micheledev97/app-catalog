@@ -1,0 +1,21 @@
+<div class="card">
+  <div style="display:flex;gap:8px;margin-bottom:12px;">
+    <button (click)="tab='login'" [disabled]="tab==='login'">Login</button>
+    <button (click)="tab='register'" [disabled]="tab==='register'">Registrati</button>
+  </div>
+
+  <form *ngIf="tab==='login'" (ngSubmit)="submitLogin()" [formGroup]="formLogin" style="display:grid;gap:8px;max-width:360px;">
+    <input placeholder="Username" formControlName="username">
+    <input placeholder="Password" type="password" formControlName="password">
+    <button type="submit">Entra</button>
+  </form>
+
+  <form *ngIf="tab==='register'" (ngSubmit)="submitReg()" [formGroup]="formReg" style="display:grid;gap:8px;max-width:360px;">
+    <input placeholder="Username" formControlName="username">
+    <input placeholder="Email" formControlName="email">
+    <input placeholder="Password (min 6)" type="password" formControlName="password">
+    <button type="submit">Crea account</button>
+  </form>
+
+  <p style="color:#b91c1c" *ngIf="error">{{error}}</p>
+</div>

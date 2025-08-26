@@ -51,7 +51,17 @@ public class ProductService {
     }
 
 
-    @Cacheable(value="product_list", key="T(java.util.Objects).hash(#page,#size,#sort,#filter.name,#filter.category,#filter.minPrice,#filter.maxPrice)")
+    @Cacheable(
+            value = "product_list",
+            key = "T(java.util.Objects).hash("
+                    + "#page, #size, "
+                    + "(#sort?:''), "
+                    + "(#filter?.name?:''), "
+                    + "(#filter?.category?:''), "
+                    + "(#filter?.minPrice?:''), "
+                    + "(#filter?.maxPrice?:'')"
+                    + ")"
+    )
     public Page<ProductDTO> list(int page, int size, String sort, ProductFilter filter) {
         Sort s = (sort == null || sort.isBlank()) ? Sort.by("id").descending() : Sort.by(sort);
         Page<Product> res = repo.findAll(spec(filter), PageRequest.of(page, size, s));

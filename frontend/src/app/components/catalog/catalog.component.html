@@ -1,0 +1,28 @@
+<div class="card" style="margin-bottom:16px;display:grid;grid-template-columns:repeat(5,1fr);gap:8px;">
+  <input placeholder="Nome" [(ngModel)]="name">
+  <input placeholder="Categoria" [(ngModel)]="category">
+  <input placeholder="Prezzo min" type="number" [(ngModel)]="minPrice">
+  <input placeholder="Prezzo max" type="number" [(ngModel)]="maxPrice">
+  <button (click)="pageIndex=0; load()">Filtra</button>
+</div>
+
+<div class="grid">
+  <div class="card" *ngFor="let p of page?.content">
+    <h3 style="margin-top:0;">{{p.name}}</h3>
+    <div>Categoria: {{p.category}}</div>
+    <p>{{p.description}}</p>
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <strong>€ {{p.price | number : '1.2-2'}}</strong>
+      <div>
+        <a [routerLink]="['/product', p.id]">Dettagli</a>
+        <button (click)="cart.add(p,1)" style="margin-left:8px;">Aggiungi</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="margin-top:16px;display:flex;gap:8px;">
+  <button (click)="prev()">Indietro</button>
+  <button (click)="next()">Avanti</button>
+  <span *ngIf="page">Pagina {{page.number+1}} / {{ Math.ceil(page.totalElements / page.size) }}</span>
+</div>
